@@ -1,0 +1,8 @@
+import pandas as pd
+
+
+# reading the database
+data = pd.read_csv(r"C:\Git\2017-agcensus-chapter1-table9-US.csv")
+
+# printing the top 20 rows
+display(data.head(20))
