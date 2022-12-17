@@ -1,0 +1,19 @@
+import pandas as pd
+pd.plotting.register_matplotlib_converters()
+import matplotlib.pyplot as plt
+%matplotlib inline
+import seaborn as sns
+
+# Path of file to read
+ign_filepath = (r"C:\Git\2017-agcensus-chapter1-table9-US.csv")
+
+#Read file into a variable ign_data
+ign_data = pd.read_csv(ign_filepath, index_col="Land")
+
+# Barchart showing Land in Farms, Harvested Croplad, and irrigated land by acres
+plt.figure(figsize=(16,6))
+plt.title("Land in Farms, Harvested Cropland, and Irrigated Land", fontsize=24)
+sns.barplot(x=ign_data.Racing, y=ign_data.index)
+plt.xlabel("Land", fontsize=12)
+plt.xticks(rotation=45)
+plt.ylabel("Acres")
